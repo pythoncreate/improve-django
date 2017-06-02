@@ -1,0 +1,153 @@
+Traceback:
+
+File "C:\Users\cs\PycharmProjects\improve_django_v3\menu\views.py" in edit_menu
+  55.             item = Item.objects.get(name=item_name)
+
+File "C:\Python35\lib\site-packages\django\db\models\manager.py" in manager_method
+  85.                 return getattr(self.get_queryset(), name)(*args, **kwargs)
+
+File "C:\Python35\lib\site-packages\django\db\models\query.py" in get
+  380.                 self.model._meta.object_name
+
+During handling of the above exception (Item matching query does not exist.), another exception occurred:
+
+File "C:\Python35\lib\site-packages\django\core\handlers\exception.py" in inner
+  41.             response = get_response(request)
+
+File "C:\Python35\lib\site-packages\django\core\handlers\base.py" in _legacy_get_response
+  249.             response = self._get_response(request)
+
+File "C:\Python35\lib\site-packages\django\core\handlers\base.py" in _get_response
+  187.                 response = self.process_exception_by_middleware(e, request)
+
+File "C:\Python35\lib\site-packages\django\core\handlers\base.py" in _get_response
+  185.                 response = wrapped_callback(request, *callback_args, **callback_kwargs)
+
+File "C:\Users\cs\PycharmProjects\improve_django_v3\menu\views.py" in edit_menu
+  57.             item = Item.objects.create(name=item_name, description = "description_here", ingredients="ingredients_here", standard=False)
+
+File "C:\Python35\lib\site-packages\django\db\models\manager.py" in manager_method
+  85.                 return getattr(self.get_queryset(), name)(*args, **kwargs)
+
+File "C:\Python35\lib\site-packages\django\db\models\query.py" in create
+  392.         obj = self.model(**kwargs)
+
+File "C:\Python35\lib\site-packages\django\db\models\base.py" in __init__
+  566.                             _setattr(self, prop, kwargs[prop])
+
+File "C:\Python35\lib\site-packages\django\db\models\fields\related_descriptors.py" in __set__
+  536.         manager = self.__get__(instance)
+
+File "C:\Python35\lib\site-packages\django\db\models\fields\related_descriptors.py" in __get__
+  513.         return self.related_manager_cls(instance)
+
+File "C:\Python35\lib\site-packages\django\db\models\fields\related_descriptors.py" in __init__
+  830.                                  (instance, self.pk_field_names[self.source_field_name]))
+
+File "C:\Python35\lib\site-packages\django\db\models\base.py" in __repr__
+  588.             u = six.text_type(self)
+
+Exception Type: TypeError at /menu/324/edit/
+Exception Value: __str__ returned non-string (type NoneType)
+Traceback:
+
+File "C:\Users\cs\PycharmProjects\improve_django_v3\menu\views.py" in edit_menu
+  55.             item = Item.objects.get(name=item_name)
+
+File "C:\Python35\lib\site-packages\django\db\models\manager.py" in manager_method
+  85.                 return getattr(self.get_queryset(), name)(*args, **kwargs)
+
+File "C:\Python35\lib\site-packages\django\db\models\query.py" in get
+  380.                 self.model._meta.object_name
+
+During handling of the above exception (Item matching query does not exist.), another exception occurred:
+
+File "C:\Python35\lib\site-packages\django\core\handlers\exception.py" in inner
+  41.             response = get_response(request)
+
+File "C:\Python35\lib\site-packages\django\core\handlers\base.py" in _legacy_get_response
+  249.             response = self._get_response(request)
+
+File "C:\Python35\lib\site-packages\django\core\handlers\base.py" in _get_response
+  187.                 response = self.process_exception_by_middleware(e, request)
+
+File "C:\Python35\lib\site-packages\django\core\handlers\base.py" in _get_response
+  185.                 response = wrapped_callback(request, *callback_args, **callback_kwargs)
+
+File "C:\Users\cs\PycharmProjects\improve_django_v3\menu\views.py" in edit_menu
+  57.             item = Item.objects.create(name=item_name, description = "description_here", ingredients="ingredients_here", standard=False)
+
+File "C:\Python35\lib\site-packages\django\db\models\manager.py" in manager_method
+  85.                 return getattr(self.get_queryset(), name)(*args, **kwargs)
+
+File "C:\Python35\lib\site-packages\django\db\models\query.py" in create
+  392.         obj = self.model(**kwargs)
+
+File "C:\Python35\lib\site-packages\django\db\models\base.py" in __init__
+  566.                             _setattr(self, prop, kwargs[prop])
+
+File "C:\Python35\lib\site-packages\django\db\models\fields\related_descriptors.py" in __set__
+  536.         manager = self.__get__(instance)
+
+File "C:\Python35\lib\site-packages\django\db\models\fields\related_descriptors.py" in __get__
+  513.         return self.related_manager_cls(instance)
+
+File "C:\Python35\lib\site-packages\django\db\models\fields\related_descriptors.py" in __init__
+  830.                                  (instance, self.pk_field_names[self.source_field_name]))
+
+File "C:\Python35\lib\site-packages\django\db\models\base.py" in __repr__
+  588.             u = six.text_type(self)
+
+Exception Type: TypeError at /menu/324/edit/
+Exception Value: __str__ returned non-string (type NoneType)
+Traceback:
+
+File "C:\Users\cs\PycharmProjects\improve_django_v3\menu\views.py" in edit_menu
+  55.             item = Item.objects.get(name=item_name)
+
+File "C:\Python35\lib\site-packages\django\db\models\manager.py" in manager_method
+  85.                 return getattr(self.get_queryset(), name)(*args, **kwargs)
+
+File "C:\Python35\lib\site-packages\django\db\models\query.py" in get
+  380.                 self.model._meta.object_name
+
+During handling of the above exception (Item matching query does not exist.), another exception occurred:
+
+File "C:\Python35\lib\site-packages\django\core\handlers\exception.py" in inner
+  41.             response = get_response(request)
+
+File "C:\Python35\lib\site-packages\django\core\handlers\base.py" in _legacy_get_response
+  249.             response = self._get_response(request)
+
+File "C:\Python35\lib\site-packages\django\core\handlers\base.py" in _get_response
+  187.                 response = self.process_exception_by_middleware(e, request)
+
+File "C:\Python35\lib\site-packages\django\core\handlers\base.py" in _get_response
+  185.                 response = wrapped_callback(request, *callback_args, **callback_kwargs)
+
+File "C:\Users\cs\PycharmProjects\improve_django_v3\menu\views.py" in edit_menu
+  57.             item = Item.objects.create(name=item_name, description = "description_here", ingredients="ingredients_here", standard=False)
+
+File "C:\Python35\lib\site-packages\django\db\models\manager.py" in manager_method
+  85.                 return getattr(self.get_queryset(), name)(*args, **kwargs)
+
+File "C:\Python35\lib\site-packages\django\db\models\query.py" in create
+  392.         obj = self.model(**kwargs)
+
+File "C:\Python35\lib\site-packages\django\db\models\base.py" in __init__
+  566.                             _setattr(self, prop, kwargs[prop])
+
+File "C:\Python35\lib\site-packages\django\db\models\fields\related_descriptors.py" in __set__
+  536.         manager = self.__get__(instance)
+
+File "C:\Python35\lib\site-packages\django\db\models\fields\related_descriptors.py" in __get__
+  513.         return self.related_manager_cls(instance)
+
+File "C:\Python35\lib\site-packages\django\db\models\fields\related_descriptors.py" in __init__
+  830.                                  (instance, self.pk_field_names[self.source_field_name]))
+
+File "C:\Python35\lib\site-packages\django\db\models\base.py" in __repr__
+  588.             u = six.text_type(self)
+
+Exception Type: TypeError at /menu/324/edit/
+Exception Value: __str__ returned non-string (type NoneType)
