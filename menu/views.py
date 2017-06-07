@@ -29,7 +29,7 @@ def item_detail(request, pk):
         item = Item.objects.select_related('chef').get(pk=pk)
     except ObjectDoesNotExist:
         raise Http404()
-    return render(request, 'menu/detail_item.html', {'item': item})
+    return render(request, 'menu/item_detail.html', {'item': item})
 
 
 def create_new_menu(request):
@@ -49,19 +49,38 @@ def edit_menu(request, pk):
     menu = get_object_or_404(Menu, pk=pk)
     items = Item.objects.all()
     admin = User.objects.get(username="admin")
+
     if request.method == "POST":
-        ingredient = Ingredient(name="bug")
+        ingredient = Ingredient(name="ingredient")
         ingredient.save()
-        item = Item(name=request.POST.get('items', ''), chef=admin, description = "your description here", standard=False)
-        item.save()
-        item.ingredients.add(ingredient)
-        menu = Menu(season=request.POST.get('season', ''),
-                    expiration_date=datetime.strptime(request.POST.get('expiration_date', ''), '%m/%d/%Y'))
+        # put items in a list to save for later
+        items = []
+
+        # make new items from option box in template
+        for i in request.POST.getlist('items'):
+            item = Item(name=i, chef=admin, description = "your description here", standard=False)
+            item.save()
+            items.append(item)
+            item.ingredients.add(ingredient)
+
+        if not Menu.objects.filter(pk=pk).exists():
+            menu=Menu(season=request.POST.get('season', ''),
+                      expiration_date=datetime.strptime(request.POST.get('expiration_date', ''), '%m/%d/%Y'))
+
+        else:
+            menu=Menu.objects.get(pk=pk)
+            # we will be replacing the old menu items
+            menu.items.clear()
+
         menu.save()
-        menu.items.add(item)
+
+        for item in items:
+            menu.items.add(item)
+
         return redirect('menu_detail', pk=menu.pk)
 
     return render(request, 'menu/change_menu.html', {
     'menu': menu,
     'items': items,
 })
+

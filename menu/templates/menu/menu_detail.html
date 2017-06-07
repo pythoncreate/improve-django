@@ -13,7 +13,7 @@
                         <h2>On the menu this season:</h2>
                         <ul>
                             {% for item in menu.items.all %}
-                                <li><a href="{% url 'item_detail' pk=item.pk %}">{{ item }}</a></li>
+                                <li><a href="{% url 'item_detail' pk=item.pk %}">{{ item.name }}</a></li>
                             {% endfor %}
                         </ul>
                         {% if menu.expiration_date %}

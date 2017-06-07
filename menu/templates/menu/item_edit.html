@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block content %}
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-8">
+                    <h1>Edit Item</h1>
+                    <form action="" method="POST">{% csrf_token %}
+                        <label for="season">Item Name:</label>
+                        {{ item.name }}
+                        <br />
+                        <label for="chef">Description:</label>
+                       {{ item.description }}
+                      <br />
+                       <label for="items">Ingredients:</label>
+                        <select multiple name="ingredients">
+                        {% for ingredient in ingredients %}
+                            <option value="{{ ingredient.name }}">{{ ingredient.name}}</option>
+                        {% endfor %}
+                        </select>  <br />
+                        <input type="submit" value="Submit" /> 
+                    </form>
+                </div>
+            </div>
+        </div>
+{% endblock %}

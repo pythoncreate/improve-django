@@ -1,7 +1,6 @@
 from django import forms
-from django.forms.extras.widgets import SelectDateWidget
-
 from .models import Menu, Item, Ingredient
+
 
 class MenuForm(forms.ModelForm):
     items = forms.ModelMultipleChoiceField(queryset=Item.objects.all(), widget=forms.SelectMultiple())
@@ -22,6 +21,6 @@ class MenuForm(forms.ModelForm):
 
         if not season:
             raise forms.ValidationError(
-                "A season name is required."
+                "Please enter a season name."
         )
         return data
